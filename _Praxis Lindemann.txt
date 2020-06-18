@@ -1,0 +1,19 @@
+#[l]:styles/layout.css:styles/layout.css
+#[l]:index.html#body:index.html#body
+#[l]:ihre-heilpraktikerin.html#body:ihre-heilpraktikerin.html#body
+#[l]:naturheilverfahren.html#body:naturheilverfahren.html#body
+
+#[l]:hintergrundwissen.html#body:hintergrundwissen.html#body
+#[l]:untersuchungsmethoden.html#body:untersuchungsmethoden.html#body
+#[l]:behandlungsmethoden.html#body:behandlungsmethoden.html#body
+#[l]:metabolic-balance.html#body:metabolic-balance.html#body
+
+#[l]:qxci.html#body:qxci.html#body
+#[l]:dunkelfelddiagnostik.html#body:dunkelfelddiagnostik.html#body
+#[l]:aktuell.html#body:aktuell.html#body
+#[l]:impressum.html#body:impressum.html#body
+
+indexfile for the Praxis Lindemann project
+open with https://github.com/nilslindemann/Code_Browser_49
+navigate with alt + up|down|left|right
+

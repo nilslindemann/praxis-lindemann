@@ -1,0 +1,550 @@
+/*[of]:Winzig (Default)*/
+/*[of]:Variablen*/
+:root {
+	--fontfamily: 'Palatino', serif;
+	--fontsize: 1.125rem;	/* 18px */
+	--u: calc(var(--fontsize) * 1.5); /* Grundeinheit (Vertikaler Rhythmus) */
+
+	--color: rgb(100, 150, 100);
+	--color-active: rgb(50, 50, 250);
+	--color-visited: rgb(134, 134, 134);
+	--quotecolor: var(--color);
+	--color-half-transparent: rgba(100, 150, 100, .5);
+}
+/*[cf]*/
+/*[of]:font-face*/
+@font-face {
+	font-family: 'Palatino';
+	src: url(../fonts/palatino-linotype.woff2) format('woff2');
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'Palatino';
+	src: url(../fonts/palatino-linotype-bold.woff2) format('woff2');
+	font-style: normal;
+	font-weight: bold;
+}
+/*[cf]*/
+/*[of]:**/
+* {
+	margin: 0;
+	padding: 0;
+	letter-spacing: 0.03em;
+	box-sizing: inherit;
+	vertical-align:inherit;
+	text-align:inherit;
+	color: inherit;
+}
+/*[cf]*/
+
+html {
+	font-size: 100%;
+	background-color:#edfcdb;
+	overflow: auto;
+	min-width:360px;
+}
+
+/*[of]body:body*/
+body {
+	display: grid;
+	grid:
+		'logo header .'
+		'menu menu menu'
+		'main main main'
+		'footer footer footer'
+		/ 1fr 20rem 1fr;
+	padding: calc(var(--u) * 2) var(--u);
+	min-width:360px;
+
+	color: var(--color);
+
+	background:
+		url(../images/lichtspot-center.jpg) no-repeat left top,
+		url(../images/lichtspot-center-repeat-y.jpg) repeat-y left top;
+
+	background-size: calc(100vw + (100vw - 360px) / 10);
+	background-position: calc((100vw - 360px) / 7) 0;
+
+	overflow: auto;
+
+	font-family: var(--fontfamily);
+	font-size: var(--fontsize);
+	line-height: var(--u);
+	vertical-align:baseline;
+	box-sizing: border-box;
+
+}
+
+/*[c]~ body:before {*/
+/*[c]	~ position:fixed;*/
+/*[c]	~ writing-mode:vertical-rl;*/
+/*[c]	~ top: 0;*/
+/*[c]	~ right: 0;*/
+/*[c]	~ display: block;*/
+/*[c]	~ color: green;*/
+/*[c]	~ font-size:2em;*/
+/*[c]	~ opacity:.05;*/
+/*[c]	~ font-family:Verdana;*/
+/*[c]	~ font-weight:bold;*/
+/*[c]	~ text-transform: uppercase;*/
+/*[c]	~ content: "Codebeispiel";*/
+/*[c]~ }*/
+
+/*[of]:(globals)*/
+p,
+h2, h3, h4, h5, h6,
+ul, ol,
+table,
+blockquote,
+main>img {
+	margin-top: var(--u);
+}
+
+h2, h3, h4, h5, h6 {
+	/* Keep them on one line as long as possible in small layouts */
+	margin-right: calc(var(--u) * (-1));
+}
+
+/*[of]:section, article*/
+section, article {
+	display:contents;
+}
+/*[cf]*/
+/*[of]:p*/
+p.go-top {
+	margin-top:calc(var(--u) * 2);
+}
+
+p.go-top:before {
+	content:url(../images/pfeil-hoch.gif);
+	margin-right: calc(var(--u) / 2);
+}
+/*[cf]*/
+/*[of]:h*/
+h2 {
+	font-size: calc(var(--fontsize) * 1.4);
+	margin-top: calc(var(--u) * 2);
+	line-height: calc(var(--u) * 2);
+}
+
+h3 {
+	font-size: calc(var(--fontsize) * 1.2);
+	margin-top: calc(var(--u) * 1.5);
+	line-height: calc(var(--u) * 1.5);
+}
+
+h4 {
+	font-size: var(--fontsize);
+}
+
+h2>img, h3>img, h4>img {
+	position: relative;
+	top: calc(var(--u) / 1.5);
+	margin-right: calc(var(--u) / 2);
+}
+/*[cf]*/
+/*[of]:blockquote, q*/
+blockquote {
+	margin-left:var(--u);
+	margin-right:var(--u);
+}
+
+blockquote, q {
+	color: var(--quotecolor);
+	quotes: '“' '”' '‘' '’' '“' '”' '‘' '’';
+}
+
+blockquote:before, q:before {content: open-quote;}
+blockquote:after, q:after {content: close-quote;}
+/*[cf]*/
+/*[of]:ul, ol*/
+ul, ol {
+	margin-left: var(--u);
+}
+
+ul li, ol li {
+	padding-left: var(--u);
+}
+
+ul li {
+	list-style-type: none;
+	background:
+		url(../images/bullet.gif)
+		no-repeat
+		0.2em 0.6em;
+}
+/*[cf]*/
+/*[of]:table*/
+table {
+	border-collapse: collapse;
+	table-layout:fixed;
+	width:100%;
+}
+
+/*[of]:thead*/
+table thead {
+	border-bottom: 1px solid;
+	border-image:
+		linear-gradient(
+			0.25turn,
+			var(--color), var(--color-half-transparent), var(--color)
+		);
+	border-image-slice: 1;
+}
+/*[cf]*/
+/*[of]:th, td*/
+table td, table th {
+	text-align: left;
+	padding-bottom: var(--u);
+	padding-right: var(--u);
+}
+
+table th {
+	vertical-align: bottom;
+}
+
+table td {
+	vertical-align: top;
+	padding-top: var(--u);
+}
+
+table td:last-child, table th:last-child {
+	padding-right: 0;
+}
+/*[cf]*/
+
+/*[of]:.ihre-heilpraktikerin*/
+.ihre-heilpraktikerin td.datum {
+	text-align: right;
+	font-weight: bold;
+}
+/*[cf]*/
+/*[cf]*/
+
+/*[of]:a*/
+a {
+	opacity: 0.9;
+}
+
+a:visited {
+	color: var(--color-visited);
+}
+
+a:hover, a:focus, a:active, a.active {
+	color: var(--color-active);
+	text-decoration: none;
+}
+/*[cf]*/
+/*[of]:\:target*/
+/*[c]Füge etwas Leerraum über dem Ziel einer Navigation ein, siehe*/
+/*[c]http://nicolasgallagher.com/jump-links-and-viewport-positioning/demo/*/
+
+:target:before {
+	display: block;
+	content: '';
+	height: var(--u);
+	margin-top: var(--u);
+}
+/*[cf]*/
+
+/*[cf]*/
+
+/*[of]:site-logo*/
+site-logo {
+	margin-left:calc(var(--u) * (-1));
+	grid-area:logo;
+	background:
+		url(../images/logo-mini.png)
+		no-repeat
+		bottom right;
+	position: relative;
+	top: calc(var(--u) * (-2));
+	right: calc(var(--u) * (-2));
+}
+/*[cf]*/
+/*[of]header:header*/
+header {
+	grid-area:header;
+	text-align:center;
+}
+
+header h1 {
+	display:inline-block;
+	width: 20rem;
+	font-size: 2rem;
+	line-height: calc(var(--u) * 2);
+	font-weight: normal;
+}
+
+header .laotsespruch, header address {
+	display:none;
+}
+/*[cf]*/
+/*[of]:nav*/
+nav {
+	grid-area: menu;
+	text-align:center;
+}
+
+nav ul {
+	display: inline-block;
+	margin-top:calc(var(--u) * 2);
+	margin-left:0;
+}
+
+nav ul li {
+	display: block;
+	white-space: pre;
+	padding-left:0;
+	background-image:none;
+}
+
+nav a {
+	display: inline-block;
+	text-decoration: none;
+	font-weight: bold;
+	position:relative;
+}
+
+/*[c]~ nav a:focus { outline: 0; }*/
+
+nav a.active:after {
+	content:url(../images/blatt.gif);
+	position:absolute;
+	right: -1.25em;
+	top: calc(.17em);
+}
+/*[cf]*/
+/*[of]:main*/
+main {
+	grid-area: main;
+	text-align:left;
+}
+/*[cf]*/
+/*[of]footer:footer*/
+footer {
+	grid-area: footer;
+	margin-top: var(--u);
+	border-top: 1px solid;
+	border-image:
+		linear-gradient(0.25turn,
+			var(--color),
+			var(--color-half-transparent),
+			var(--color)
+		);
+	border-image-slice: 1;
+	font-size: calc(var(--fontsize) / 1.25);
+	text-align:center;
+}
+/*[cf]*/
+/*[cf]*/
+/*[cf]*/
+
+@media (max-width: 360px) {
+/*[of]:Hintergrund*/
+html, body {
+	background-size: contain;
+}
+/*[cf]*/
+}
+
+@media (min-width: 34em) {
+/*[of]:Klein*/
+:root {
+	--fontsize:	1.125rem;	/* 18px */
+}
+
+site-logo {
+	background:
+		url(../images/logo-klein.png)
+		no-repeat
+		bottom right;
+	top: 0;
+	right: var(--u);
+}
+
+nav ul {
+	column-count:2;
+	width:30rem;
+}
+
+/*[cf]*/
+}
+
+@media (min-width: 41em) {
+/*[of]:(Tabelle 'Ihre Heilpraktikerin')*/
+table.ihre-heilpraktikerin {
+	width:calc(100vw - 340px);
+}
+
+img.foto {
+	float:right;
+}
+/*[cf]*/
+}
+
+@media (min-width: 58em) {
+/*[of]:Mittel*/
+body {
+	grid:
+		'logo header'
+		'menu main'
+		'footer footer'
+		/
+		calc(var(--u) * 10)
+		auto;
+	text-align:left;
+}
+
+/*[of]:header*/
+header {
+	margin-right:calc(var(--u) * (-1));
+	width:36rem;
+}
+
+header h1 {
+	font-size: calc(var(--u) * 1.5);
+	width:auto;
+	margin-top: var(--u);
+}
+
+header .laotsespruch, header address {
+	display:block;
+	font-size:.9rem;
+	line-height:1.5em;
+}
+
+header .laotsespruch q {
+	width:19.5em;
+	display:inline-block;
+}
+/*[cf]*/
+/*[of]:site-logo*/
+site-logo {
+	background:
+		url(../images/logo.gif)
+		no-repeat
+		bottom right;
+	top: 0;
+	right: calc(var(--u) * 4);
+}
+/*[cf]*/
+/*[of]:nav*/
+nav ul {
+	display:block;
+	width:auto;
+	column-count:1;
+	text-align:left;
+}
+
+nav a {
+	padding-top:calc(var(--u) / 4);
+	padding-bottom:calc(var(--u) / 4);
+}
+
+nav a.active:after {
+	top: calc(.58rem);
+}
+/*[cf]*/
+/*[of]:main*/
+table.ihre-heilpraktikerin {
+	width:calc(100vw - 600px);
+}
+
+/*[cf]*/
+/*[cf]*/
+}
+
+@media (min-width: 74em) {
+/*[of]:groß*/
+body {
+	grid:
+		'logo header .'
+		'menu main main'
+		'footer footer footer'
+		/
+		calc(var(--u) * 10)
+		auto
+		calc(var(--u) * 10);
+}
+
+header {
+	margin-right:0;
+	width:auto;
+}
+/*[cf]*/
+}
+
+@media print {
+	/*[of]:print*/
+	/* Ungetestet, ich besitze keinen Drucker */
+	
+	* {
+		color:black !important;
+		text-decoration:none !important;
+		width:auto !important;
+		opacity: 1 !important;
+	}
+	
+	site-logo, nav, .go-top, footer br, footer a {
+		display: none !important;
+	}
+	
+	body, main, footer {
+		display: block !important;
+	}
+	
+	html, body {
+		background: white;
+	}
+	
+	header, main, footer {
+		text-align:left;
+	}
+	
+	body {
+		padding-top: 0;
+		font-size:	1.125rem;
+	}
+	
+	header h1 {
+		font-size:	2.3rem;
+		margin-top:var(--u);
+	}
+	
+	.laotsespruch {
+		display:block !important;
+		font-size: .75em;
+	}
+	
+	header h1:before {
+		content:url(../images/logo-klein.png);
+		display:inline-block;
+		margin-right:1em;
+		position:relative;
+		top:.3em;
+	}
+	
+	h2 {
+		font-size:1.7em !important;
+	}
+	
+	ul li {
+		background:none;
+		list-style-type:disc;
+		margin-left:2em;
+		padding-left:0;
+	}
+	
+	footer {
+		border:0;
+		margin-top:calc(var(--u) * 2);
+	}
+	
+	footer:after {
+		content:"Cita Lindemann, Heilpraktikerin/MTA • Telefon: 06241/309888 • Mobil: 0177/7650609 • Praxiszeiten: Montag bis Freitag 8-12 Uhr. Montag, Dienstag, Donnerstag 15-18 Uhr (20 Uhr)";
+	}
+	/*[cf]*/
+}

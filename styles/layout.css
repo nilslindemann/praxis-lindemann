@@ -77,21 +77,6 @@ body {
 
 }
 
-/*[c]~ body:before {*/
-/*[c]   ~ position:fixed;*/
-/*[c]   ~ writing-mode:vertical-rl;*/
-/*[c]   ~ top: 0;*/
-/*[c]   ~ right: 0;*/
-/*[c]   ~ display: block;*/
-/*[c]   ~ color: green;*/
-/*[c]   ~ font-size:2em;*/
-/*[c]   ~ opacity:.05;*/
-/*[c]   ~ font-family:Verdana;*/
-/*[c]   ~ font-weight:bold;*/
-/*[c]   ~ text-transform: uppercase;*/
-/*[c]   ~ content: "Codebeispiel";*/
-/*[c]~ }*/
-
 /*[of]:(globals)*/
 p,
 h2, h3, h4, h5, h6,

@@ -13,7 +13,7 @@
 #[l]:aktuell.html#body:aktuell.html#body
 #[l]:impressum.html#body:impressum.html#body
 
-indexfile for the Praxis Lindemann project
-open with https://github.com/nilslindemann/Code_Browser_49
-navigate with alt + up|down|left|right
+Indexfile for the Praxis Lindemann project
+Open with https://github.com/nilslindemann/Code_Browser_49
+Navigate with alt + up|down|left|right
 
